@@ -1,0 +1,18 @@
+<?php
+class AdminController extends AppController {
+	var $name = 'Admin';
+	var $helpers = array('Html','Javascript');
+	
+	function main() {
+		$count_file = 'counter.txt';
+		$count = 0;
+		if (file_exists($count_file)) {
+			/* Get current count */
+			$count = intval(trim(file_get_contents($count_file))) or $count = 0;
+		}
+		
+		$this->set('count', $count);
+		$this->layout = 'admin';
+	}
+}
+?>

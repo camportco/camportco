@@ -1,0 +1,27 @@
+<? for ($j = 1; $j <= $product['photo_cnt']; $j++) {
+$product['desc']=str_replace( "\r\n", "</p><p>",$product['desc']);
+$product['desc'] = "<p>" . $product['desc']. "</p>";
+?>
+<div class='mb'>
+    <table width="980">
+    <tr>
+        <td width="600">
+            <a href="<?=$html->webroot."product_images/".$product['product_id'].'_l_'.$j.".jpg"?>" target="_blank">
+            <img id="mbimg_<?=$j?>" class="mbimg" src="<?=$html->webroot."product_images/".$product['product_id'].'_l_'.$j.".jpg"?>" />
+            </a>
+        </td>
+        <? if ($j == 1) {?>
+        <td>
+            <table>
+            	<tr><td colspan="2" align="left"><? echo $html->image("../images/prod_info.gif", array("width" => "250", "height"=> "25")); ?></td></tr>
+                <tr><th width="100">ID:</th><td><?=$product['product_id']?></td></tr>
+                <tr><th>Name:</th><td><?=$product['name']?></td></tr>
+                <tr><th>Company:</th><td><?=$make['make_name']?></td></tr>
+                <tr><th>Description:</th><td><? if (!empty($product['desc'])) { echo $product['desc']; } else {echo "No description";}?></td></tr>
+            </table>
+        </td>
+        <? }?>
+    </tr>
+    </table>
+</div>
+<? }?>

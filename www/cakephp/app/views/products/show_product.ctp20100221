@@ -1,0 +1,24 @@
+<style type="text/css">
+	#prod {  margin: 3px 5px 5px 25px;}
+	#prod img { float: left	; border: 5px solid #eee; margin: 3px 5px 5px 0; }
+</style>
+
+<div id="prod">
+<?	$i = 0;
+	foreach($products as $product): 
+	?>
+    <a id="<?='a_prod_'.$divId.'_'.$i ?>" href="#"><img src="../product_images/<?=$product['Product']['product_id']?>_s.jpg" width="220" height="130" onclick="prod_click('<?='prod_'.$divId.'_'.$i?>', '<?=$product['Product']['product_id']?>')"/></a>
+<? $i++; endforeach; ?>
+</div>
+
+<!-- For mopbox -->
+<div class="hidden">
+		<? 
+		$i = 0;
+		foreach($products as $product): 
+		?>
+        <div id="<?='prod_'.$divId.'_'.$i ?>">
+            <? echo $this->element('mopbox_form', array('product' => $product['Product'], 'make' => $product['Make'])); ?>
+        </div>
+        <? $i++; endforeach;?>
+</div>

@@ -1,0 +1,27 @@
+<?
+echo $html->css('/themes/blue/style.css');
+
+$newslink = $newslinks['newslink'];
+?>
+
+<script type="text/javascript">
+	function checkFields() {
+	
+		return true;
+	}
+</script>
+
+<input type="hidden" name="id" size="10" readonly="readonly" value="<?=$newslink['id']?>" />
+
+<p id="menu">newslink Creation/Edit</p>
+<table class="dataTable">
+<tr>
+	<th>ID</th><td><input type="text" name="id" size="40" maxlength="100" value="<?=$newslink['id']?>"  <? if ($newslink != null) {?> readonly="readonly" <? }?>/></td>
+	</tr>
+	<tr>
+	<th>Content</th><td><input type="text" name="content" size="40" maxlength="100" value="<?=$newslink['content']?>"  /></td>
+</tr>
+<tr>
+	<th>URL</th><td><input type="text" name="url" size="40" maxlength="100" value="<?=$newslink['url']?>"  /></td>
+</tr>
+</table>

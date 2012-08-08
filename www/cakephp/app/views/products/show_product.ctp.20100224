@@ -1,0 +1,19 @@
+<div id="prod">
+<?	$i = 0;
+	foreach($products as $product): 
+	?>
+    <a id="<?='a_prod_'.$divId.'_'.$i ?>" href="#"><img src="../product_images/<?=$product['Product']['product_id']?>_s.jpg" width="220" height="130" class="graphic"/></a>
+<? $i++; endforeach; ?>
+</div>
+
+<!-- For mopbox -->
+<div class="hidden">
+		<? 
+		$i = 0;
+		foreach($products as $product): 
+		?>
+        <div id="<?='prod_'.$divId.'_'.$i ?>">
+            <? echo $this->element('mopbox_form', array('product' => $product['Product'])); ?>
+        </div>
+        <? $i++; endforeach;?>
+</div>

@@ -1,0 +1,18 @@
+<div id="top">
+    <p>
+        <a href="">Language</a>
+        <a href="">FontSize</a>
+        <a href="">Help</a>
+    </p>
+   
+</div>
+    
+<div id="logo">
+	<a href="<?=$html->webroot?>"><img src="<?=$html->webroot?>images/logo.gif" alt="" /></a>
+</div>
+
+<ul id="menu">
+    <li><a href="<?=$html->webroot?>">Home</a></li>
+    <li><a href="<?=$html->webroot?>categorys/menus">Product</a></li>
+    <li><a href="<?=$html->webroot?>companys/info">Contact Us</a> </li>
+</ul>

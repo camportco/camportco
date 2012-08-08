@@ -1,0 +1,10 @@
+<?php
+class AdminController extends AppController {
+	var $name = 'Admin';
+	var $helpers = array('Html','Javascript');
+	
+	function main() {
+		$this->layout = 'admin';
+	}
+}
+?>
